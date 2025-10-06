@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>SkinFix — Quick Face Tips</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>SkinFix — Quick Face Tips</h1>
+      <p>Click an area to get a short cause, tips & recommended products.</p>
+    </header>
+
+    <main>
+      <div class="face-wrap">
+        <!-- Simple SVG face with clickable regions -->
+        <svg id="faceSvg" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+          <!-- skin background -->
+          <rect width="100%" height="100%" fill="transparent"/>
+          <!-- face shape -->
+          <ellipse cx="200" cy="240" rx="120" ry="160" fill="#f6dfd6"/>
+          
+          <!-- forehead region -->
+          <path id="forehead" class="region" d="M120,120 Q200,70 280,120 L280,170 Q200,120 120,170 Z" />
+          
+          <!-- left eye area -->
+          <ellipse id="left-eye" class="region" cx="155" cy="220" rx="30" ry="18"/>
+          <!-- right eye area -->
+          <ellipse id="right-eye" class="region" cx="245" cy="220" rx="30" ry="18"/>
+
+          <!-- nose area -->
+          <path id="nose" class="region" d="M190,235 Q200,270 210,235 Q200,250 190,235 Z"/>
+
+          <!-- left cheek -->
+          <path id="left-cheek" class="region" d="M120,260 Q150,240 160,300 Q140,320 120,300 Z"/>
+
+          <!-- right cheek -->
+          <path id="right-cheek" class="region" d="M280,260 Q250,240 240,300 Q260,320 280,300 Z"/>
+
+          <!-- mouth/chin -->
+          <path id="mouth" class="region" d="M160,330 Q200,360 240,330 Q200,380 160,330 Z"/>
+
+          <!-- simple facial features (non-interactive) -->
+          <circle cx="155" cy="220" r="4" fill="#222"/>
+          <circle cx="245" cy="220" r="4" fill="#222"/>
+          <path d="M180 350 Q200 365 220 350" stroke="#222" stroke-width="3" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <aside id="card" class="card hidden" role="dialog" aria-hidden="true">
+        <button id="closeBtn" class="close">×</button>
+        <h2 id="cardTitle">Area</h2>
+        <p id="cardCause" class="muted"></p>
+
+        <h3>Quick tips</h3>
+        <ul id="cardTips"></ul>
+
+        <h3>Recommended</h3>
+        <div id="cardProducts" class="products"></div>
+      </aside>
+    </main>
+
+    <footer>
+      <small>“Make the face clearer”</small>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
